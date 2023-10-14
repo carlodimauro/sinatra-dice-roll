@@ -26,11 +26,9 @@ get("/dice/2/6") do
   second_die = rand(1..6)
   sum = first_die + second_die
 	
-  outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+  @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
 	
-  "<h1>2 Dies with 6 Sides</h1>
-   <p>#{outcome}</p>
-   </br></br><a href='/'>Back</a>"
+  erb(:two_six)
 end
 
 get ("/dice/2/10") do
